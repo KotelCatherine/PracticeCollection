@@ -18,7 +18,7 @@ public class WordCounter {
                     and classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).""";
 
     public WordCounter() {
-        text = ignoreCase(text);
+        text = text.toLowerCase();
         String s = text.replaceAll("\\pP", "");
         Collections.addAll(textInTheList, s.split("[\\s+]"));
 
@@ -31,10 +31,6 @@ public class WordCounter {
         Map<String, Integer> sortedByValue = sortedMapByValue(uniqueWord);
 
         printMap(sortedByValue, count);
-    }
-
-    private String ignoreCase(String text) {
-        return text.toLowerCase();
     }
 
     private Map<String, Integer> sortedMapByValue(Map<String, Integer> uniqueWord) {
